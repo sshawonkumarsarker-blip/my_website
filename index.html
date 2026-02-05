@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta name="X-XSS-Protection" content="1; mode=block" />
+    <title>Shawon Kumar Sarker | Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f3;
+            color: #333;
+        }
+
+        header {
+            position: relative;
+            padding: 0;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 3;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .header-content h1 {
+            font-size: 2.8em;
+            margin: 0;
+        }
+
+        .header-content p {
+            font-size: 1.2em;
+            margin-top: 8px;
+        }
+
+        . .social-icons {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 4;
+        }
+
+        .social-icons a {
+            color: #fcf9fc;
+            font-size: 1.6em;
+            transition: color 0.3s ease;
+            background-color: #1b191b;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .social-icons a:hover {
+            color: white;
+            background-color: #0e0e0e;
+        }
+
+        nav {
+            background-color: #004080;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        section h2 {
+            color: #002244;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0055a5;
+            padding-bottom: 5px;
+        }
+
+        section ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        section a {
+            color: #0055a5;
+            text-decoration: none;
+        }
+
+        section a:hover {
+            text-decoration: underline;
+        }
+
+        .profile-img {
+            float: right;
+            width: 180px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-left: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid #0055a5;
+        }
+
+        .cert-img {
+            max-width: 300px;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 10px 0;
+        }
+
+        footer {
+            background-color: #002244;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .header-content h1 {
+                font-size: 1.8em;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .profile-img {
+                float: none;
+                display: block;
+                margin: 0 auto 20px auto;
+                width: 80%;
+                height: auto;
+                max-height: 300px;
+            }
+
+            .social-icons {
+                top: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="F:\Downloads\My Photos\WhatsApp Image 2025-05-06 at 12.19.24_60b54220 copy 2.jpg"
+            alt="Plane Banner" />
+        <div class="header-content">
+            <h1>Shawon Kumar Sarker</h1>
+            <p>Mechanical Engineering Student | CAD & Aerodynamics Enthusiast</p>
+        </div>
+        <div class="social-icons">
+            <a href="www.linkedin.com/in/s-sarker" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.facebook.com/shawon.kumar.sarker.2024/" target="_blank" rel="noopener noreferrer"
+                title="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#honors">Honors & Awards</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="F:\Downloads\My Photos\WhatsApp Image 2025-05-04 at 17.58.12_f51c4693 copy.jpg"
+            alt="Shawon Kumar Sarker" class="profile-img" />
+        <p style="text-align: justify;">>
+            Hello! I'm Shawon Kumar Sarker, a dedicated and enthusiastic Second-Year, odd-Semester Mechanical
+            Engineering student at
+            Rajshahi University of Engineering & Technology (RUET). My passion lies in exploring the vast and dynamic
+            field of mechanical engineering, where I aim to deepen my understanding through both academic coursework and
+            hands-on
+            experience.
+
+            I am highly motivated and eager to gain industry exposure through internships, research projects, and
+            extracurricular
+            activities. As a collaborative team player with effective communication skills, I am committed to continuous
+            learning
+            and excited about opportunities that will enhance my engineering expertise and prepare me for future
+            professional
+            endeavors.
+
+        </p>
+        <p><strong>Blood Group:</strong> B+</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li>
+                <strong>Rajshahi University of Engineering and Technology (RUET)</strong><br />
+                Bachelor of Science in Mechanical Engineering (BSc Engg.)<br />
+                Department: Mechanical Engineering<br />
+                Session: 2022–2023<br />
+                Student ID: 2202002<br />
+                Status: Ongoing
+            </li>
+            <li>
+                <strong>Govt. Azizul Haque College, Bogura (EIIN: 119246)</strong><br />
+                Higher Secondary Certificate (HSC), Science<br />
+                Passing Year: 2022<br />
+                GPA: 5.00/5.00
+            </li>
+            <li>
+                <strong>Uthali High School,Shibgonj, Bogura (EIIN: 119840)</strong><br />
+                Secondary School Certificate (SSC), Science<br />
+                Passing Year: 2020<br />
+                GPA: 5.00/5.00
+            </li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+
+        <h3>Software & Technical Skills</h3>
+        <div class="skills-grid">
+            <span>SolidWorks</span>
+            <span>ANSYS</span>
+            <span>MATLAB</span>
+            <span>C</span>
+            <span>Python</span>
+            <span>Minitab</span>
+            <span>Excel</span>
+            <span>MS Word</span>
+            <span>PowerPoint</span>
+            <span>Adobe Photoshop</span>
+        </div>
+
+        <h3>Soft Skills</h3>
+        <div class="skills-grid">
+            <span>Communication</span>
+            <span>Team Collaboration</span>
+            <span>Problem Solving</span>
+            <span>Time Management</span>
+            <span>Adaptability</span>
+            <span>Leadership</span>
+        </div>
+    </section>
+
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Reynolds Number Study:</strong> Investigation of Fluid Flow under ME 2105 (Fluid Mechanics I)
+            </li>
+            <li><strong>Airfoil Analysis:</strong> Comparative Flow Analysis of NACA 24112 & NACA 25112</li>
+            <li><strong>Upcoming:</strong> Earthquake Loss Prediction Model for Dhaka</li>
+        </ul>
+    </section>
+
+    <section id="publications">
+        <h2>Research Publications</h2>
+        <ul>
+            <li>
+                Sarker, S.K. (2025). <a href="https://doi.org/10.xxxx/airfoil-journal-001" target="_blank"
+                    rel="noopener noreferrer">Comparative CFD Analysis of NACA 24112 & NACA 25112 for Low-Speed
+                    Applications</a>.
+                <em>Journal of Aerospace Engineering Research</em>.
+            </li>
+            <li>
+                Sarker, S.K. (Upcoming). <a href="https://doi.org/10.xxxx/quake-model-conf" target="_blank"
+                    rel="noopener noreferrer">Machine Learning Based Earthquake Loss Prediction Model</a>.
+                <em>International
+                    Conference on Disaster Risk and Engineering 2025</em>.
+            </li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <ul>
+
+            <li><strong>SAER (Society of Automotive Engineers RUET):</strong> Executive Member (2023–2024)</li>
+            <li><strong>SCADER (Student Chapter for Aerospace and Design Engineering Research):</strong> General Member
+            </li>
+            <li><strong>Industrial Tour:</strong> Rajshahi Sugar Mill – Hands-on exposure to industrial operations and
+                machinery.</li>
+        </ul>
+    </section>
+
+    <section id="honors">
+        <h2>Honors & Awards</h2>
+        <ul>
+            <li>Technical Education Directorate Scholarship (Based on BSc Engineering Admission Exam 2023)</li>
+            <li>RUET Merit-Based Scholarship for Academic Excellence</li>
+            <li>Campus Ambassador – Youth Leadership Summit 2025</li>
+        </ul>
+    </section>
+    <section id="certifications">
+        <h2>Courses & Certifications</h2>
+        <ul>
+            <li>
+                <strong>Harnessing Wind Energy: Analytical, Numerical, and Experimental Approaches to Wind
+                    Energy</strong> - Completed specialized three day course organized by the Institute of Energy &
+                Environmental Studies (IEES), RUET.
+                <p style="text-align: justify;">This specialized three-day course was a highly enriching experience,
+                    allowing me to deepen my understanding of wind
+                    energy systems through a balanced integration of theory, simulation, and experimentation.
+                    🔹 I explored analytical approaches, including fundamental aerodynamic models and governing
+                    equations, which helped
+                    solidify my theoretical foundation in wind energy conversion.
+                    🔹 In the numerical simulation segment,I was introduced to ANSYS Fluent to perform CFD
+                    (Computational Fluid Dynamics)
+                    analysis. Simulating airflow over turbine blades and studying wake effects provided practical
+                    insight into real-world
+                    wind turbine performance.
+                    🔹 Using modeFRONTIER, I was introduced to multi-objective design optimization, where I learned how
+                    various turbine
+                    parameters can be tuned to enhance overall efficiency.
+                    🔹 I also became familiar with the MOD (Mode of Operation and Design) framework, which offered a
+                    structured way to
+                    evaluate turbine behavior under different operating conditions.
+                    Overall, this course was top-notch, providing a valuable blend of theoretical knowledge and hands-on
+                    experience in wind
+                    energy technologies.</p>
+
+                <img src="F:\Downloads\Course and Certification\IEES_page-0001.jpg"
+                    alt="Harnessing Wind Energy: Analytical, Numerical, and Experimental Approaches to Wind Energy Certificate"
+                    class="cert-img" />
+            </li>
+            <li>
+                <strong>Work Smarter with Microsoft Excel</strong> – Completed online course on Ms. Excel.
+                <p style="text-align: justify;">In this Course , I was provided with in-depth training across several
+                    Excel modules, which helped me enhance my skills in both basic and
+                    advanced tasks.
+
+                    In Module 1, the basics of Excel were introduced to me, including workbook creation, data
+                    formatting, layout
+                    adjustments, and preparing workbooks for printing.
+
+                    In Module 2, I was guided through functions and formulas, sorting and filtering data, defining
+                    ranges, and using
+                    specialized, text, and logical functions.
+
+                    Module 3 helped me learn how to organize and visualize data using tables, charts, pivot tables, and
+                    slicers.
+
+                    In Module 4, advanced features such as customizing formulas, conditional formatting, workbook
+                    automation, and data
+                    exporting were explored.
+
+                    Finally, in Module 5, I completed a hands-on project where the skills I had acquired were applied to
+                    analyze and present
+                    sales data, including reviewing and commenting on the dataset.</p>
+                <img src="F:\Downloads\Course and Certification\Coursera I8TAU4VY0YHD_page-0001.jpg"
+                    alt="Microsoft Excel Certificate" class="cert-img" />
+            </li>
+            <li>
+                <strong>Python Basics</strong> – Completed online course on fundamentals of Python programming.<p
+                    style="text-align: justify;">This course covered key Python 3 concepts such as conditional
+                    execution, iteration, strings, and lists, with four
+                    in-depth modules, practice problems, and graded assessments. 💻
+                    It was a fantastic hands-on experience, and I especially enjoyed working with
+                    Turtle graphics to visualize concepts. 🐢
+                    Excited to continue building on these skills and apply them in future projects.
+                    Highly recommend this course for anyone looking to start their Python programming journey! 🐍</p>
+                <img src="F:\Downloads\Course and Certification\Coursera R20MY5NP1KK3_page-0001.jpg"
+                    alt="Python Certificate" class="cert-img" />
+            </li>
+            <li>
+                <strong>Master Class on Leadership Excellence </strong> – Completed online course on leadership.<br />
+                <img src="F:\Downloads\Course and Certification\master-class-on-leadership-excellence_page-0001.jpg"
+                    alt="Leadership Certificate" class="cert-img" />
+            </li>
+        </ul>
+    </section>
+
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:sshawonkumarsarker@gmail.com">sshawonkumarsarker@gamil.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/s-sarker/">Shawon Kumar Sarker</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/shawon.kumar.sarker.2024/">Shawon Kumar Sarker</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Shawon Kumar Sarker. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
