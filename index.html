@@ -2,451 +2,292 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-Frame-Options" content="DENY" />
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-    <meta name="X-XSS-Protection" content="1; mode=block" />
-    <title>Shawon Kumar Sarker | Personal Website</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shawon Kumar Sarker | Mechanical Engineering Portfolio</title>
+
+    <meta name="description"
+        content="Shawon Kumar Sarker - Mechanical Engineering student at RUET specializing in Aerodynamics, CFD, Flow Control, and Turbulence Modeling.">
+    <meta name="keywords" content="Shawon Kumar Sarker, RUET, CFD, Aerodynamics, ANSYS, NACA Airfoil, Bangladesh">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #eef2f3;
-            color: #333;
+            font-family: 'Inter', sans-serif;
         }
 
-        header {
-            position: relative;
-            padding: 0;
-            height: 350px;
-            overflow: hidden;
+        html {
+            scroll-behavior: smooth;
         }
 
-        header img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
+        .glass {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .header-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            text-align: center;
-            z-index: 3;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
         }
 
-        .header-content h1 {
-            font-size: 2.8em;
-            margin: 0;
-        }
-
-        .header-content p {
-            font-size: 1.2em;
-            margin-top: 8px;
-        }
-
-        . .social-icons {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            z-index: 4;
-        }
-
-        .social-icons a {
-            color: #fcf9fc;
-            font-size: 1.6em;
-            transition: color 0.3s ease;
-            background-color: #1b191b;
-            padding: 8px;
-            border-radius: 50%;
-        }
-
-        .social-icons a:hover {
-            color: white;
-            background-color: #0e0e0e;
-        }
-
-        nav {
-            background-color: #004080;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 15px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ffc107;
-        }
-
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        section h2 {
-            color: #002244;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #0055a5;
-            padding-bottom: 5px;
-        }
-
-        section ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-
-        section a {
-            color: #0055a5;
-            text-decoration: none;
-        }
-
-        section a:hover {
-            text-decoration: underline;
-        }
-
-        .profile-img {
-            float: right;
-            width: 180px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-left: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            border: 2px solid #0055a5;
-        }
-
-        .cert-img {
-            max-width: 300px;
-            margin-top: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            padding: 10px 0;
-        }
-
-        footer {
-            background-color: #002244;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 0.9em;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 600px) {
-            .header-content h1 {
-                font-size: 1.8em;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .profile-img {
-                float: none;
-                display: block;
-                margin: 0 auto 20px auto;
-                width: 80%;
-                height: auto;
-                max-height: 300px;
-            }
-
-            .social-icons {
-                top: 20px;
-                right: 20px;
-            }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 
-<body>
-    <header>
-        <img src="cover_picture.jpg"
-            alt="Plane Banner" />
-        <div class="header-content">
-            <h1>Shawon Kumar Sarker</h1>
-            <p>Mechanical Engineering Student | CAD & Aerodynamics Enthusiast</p>
-        </div>
-        <div class="social-icons">
-            <a href="www.linkedin.com/in/s-sarker" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://www.facebook.com/shawon.kumar.sarker.2024/" target="_blank" rel="noopener noreferrer"
-                title="Facebook">
-                <i class="fab fa-facebook"></i>
-            </a>
-        </div>
-    </header>
+<body class="bg-gray-950 text-gray-200">
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#experience">Experience</a>
-        <a href="#honors">Honors & Awards</a>
-        <a href="#contact">Contact</a>
+    <!-- NAVBAR -->
+    <nav class="fixed w-full bg-gray-950/80 backdrop-blur-md border-b border-gray-800 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="font-bold text-white text-lg">Shawon Kumar Sarker</h1>
+                <p class="text-xs text-gray-400">Mechanical Engineering • RUET</p>
+            </div>
+
+            <div class="hidden md:flex space-x-8 text-sm">
+                <a href="#about" class="hover:text-blue-400">About</a>
+                <a href="#projects" class="hover:text-blue-400">Projects</a>
+                <a href="#skills" class="hover:text-blue-400">Skills</a>
+                <a href="#experience" class="hover:text-blue-400">Experience</a>
+                <a href="#contact" class="hover:text-blue-400">Contact</a>
+                <a href="cv.pdf" class="border px-4 py-1 rounded hover:border-blue-500">Download CV</a>
+            </div>
+        </div>
     </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <img src="Profile_pic.png"
-            alt="Shawon Kumar Sarker" class="profile-img" />
-        <p style="text-align: justify;">>
-            Hello! I'm Shawon Kumar Sarker, a dedicated and enthusiastic Second-Year, odd-Semester Mechanical
-            Engineering student at
-            Rajshahi University of Engineering & Technology (RUET). My passion lies in exploring the vast and dynamic
-            field of mechanical engineering, where I aim to deepen my understanding through both academic coursework and
-            hands-on
-            experience.
+    <!-- HERO -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-            I am highly motivated and eager to gain industry exposure through internships, research projects, and
-            extracurricular
-            activities. As a collaborative team player with effective communication skills, I am committed to continuous
-            learning
-            and excited about opportunities that will enhance my engineering expertise and prepare me for future
-            professional
-            endeavors.
+            <!-- LEFT -->
+            <div>
+                <p class="text-gray-400 mb-4">Hello — I'm</p>
+                <h2 class="text-5xl font-extrabold text-white mb-6">
+                    Shawon Kumar Sarker
+                </h2>
 
-        </p>
-        <p><strong>Blood Group:</strong> B+</p>
-    </section>
+                <h3 class="text-xl text-blue-400 mb-6">
+                    <span id="typing"></span>
+                </h3>
 
-    <section id="education">
-        <h2>Education</h2>
-        <ul>
-            <li>
-                <strong>Rajshahi University of Engineering and Technology (RUET)</strong><br />
-                Bachelor of Science in Mechanical Engineering (BSc Engg.)<br />
-                Department: Mechanical Engineering<br />
-                Session: 2022–2023<br />
-                Student ID: 2202002<br />
-                Status: Ongoing
-            </li>
-            <li>
-                <strong>Govt. Azizul Haque College, Bogura (EIIN: 119246)</strong><br />
-                Higher Secondary Certificate (HSC), Science<br />
-                Passing Year: 2022<br />
-                GPA: 5.00/5.00
-            </li>
-            <li>
-                <strong>Uthali High School,Shibgonj, Bogura (EIIN: 119840)</strong><br />
-                Secondary School Certificate (SSC), Science<br />
-                Passing Year: 2020<br />
-                GPA: 5.00/5.00
-            </li>
-        </ul>
-    </section>
+                <p class="text-gray-400 mb-8 leading-relaxed">
+                    Mechanical Engineering student at RUET focused on Aerodynamics,
+                    CFD simulation, Passive Flow Control, and Turbulence Modeling.
+                    I work on high-fidelity ANSYS simulations and airfoil optimization research.
+                </p>
 
-    <section id="skills">
-        <h2>Skills</h2>
+                <div class="flex gap-4">
+                    <a href="#projects" class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                        View Research
+                    </a>
+                    <a href="#contact"
+                        class="border border-gray-600 px-6 py-3 rounded-lg hover:border-blue-500 transition">
+                        Contact Me
+                    </a>
+                </div>
 
-        <h3>Software & Technical Skills</h3>
-        <div class="skills-grid">
-            <span>SolidWorks</span>
-            <span>ANSYS</span>
-            <span>MATLAB</span>
-            <span>C</span>
-            <span>Python</span>
-            <span>Minitab</span>
-            <span>Excel</span>
-            <span>MS Word</span>
-            <span>PowerPoint</span>
-            <span>Adobe Photoshop</span>
-        </div>
+                <div class="mt-8 text-sm text-gray-400">
+                    <p><strong>Location:</strong> Bangladesh</p>
+                    <p><strong>Focus:</strong> CFD • Aerodynamics • Flow Control</p>
+                </div>
+            </div>
 
-        <h3>Soft Skills</h3>
-        <div class="skills-grid">
-            <span>Communication</span>
-            <span>Team Collaboration</span>
-            <span>Problem Solving</span>
-            <span>Time Management</span>
-            <span>Adaptability</span>
-            <span>Leadership</span>
+            <!-- RIGHT FEATURE CARD -->
+            <div class="glass rounded-2xl overflow-hidden shadow-xl fade-in">
+                <img src="https://source.unsplash.com/600x400/?engineering,aerodynamics"
+                    class="w-full h-64 object-cover">
+
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-white mb-3">
+                        Featured Work: NACA Airfoil Optimization
+                    </h3>
+                    <p class="text-gray-400 mb-4 text-sm">
+                        CFD-based aerodynamic performance enhancement using ANSYS Fluent,
+                        mesh refinement strategy, and Y+ validation.
+                    </p>
+                    <a href="#projects" class="text-blue-400 text-sm">See Projects →</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
+    <!-- ABOUT -->
+    <section id="about" class="py-20 px-6 border-t border-gray-800 fade-in">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-8">About</h2>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul>
-            <li><strong>Reynolds Number Study:</strong> Investigation of Fluid Flow under ME 2105 (Fluid Mechanics I)
-            </li>
-            <li><strong>Airfoil Analysis:</strong> Comparative Flow Analysis of NACA 24112 & NACA 25112</li>
-            <li><strong>Upcoming:</strong> Earthquake Loss Prediction Model for Dhaka</li>
-        </ul>
+            <p class="text-gray-400 leading-relaxed">
+                I am a Mechanical Engineering undergraduate at RUET passionate about
+                aerodynamic performance optimization and simulation-driven engineering.
+                My work includes NACA airfoil comparative studies, sinusoidal leading-edge
+                modifications, vortex generator integration, and turbulence model validation
+                using Realizable k-ε with Enhanced Wall Treatment.
+            </p>
+        </div>
     </section>
 
-    <section id="publications">
-        <h2>Research Publications</h2>
-        <ul>
-            <li>
-                Sarker, S.K. (2025). <a href="https://doi.org/10.xxxx/airfoil-journal-001" target="_blank"
-                    rel="noopener noreferrer">Comparative CFD Analysis of NACA 24112 & NACA 25112 for Low-Speed
-                    Applications</a>.
-                <em>Journal of Aerospace Engineering Research</em>.
-            </li>
-            <li>
-                Sarker, S.K. (Upcoming). <a href="https://doi.org/10.xxxx/quake-model-conf" target="_blank"
-                    rel="noopener noreferrer">Machine Learning Based Earthquake Loss Prediction Model</a>.
-                <em>International
-                    Conference on Disaster Risk and Engineering 2025</em>.
-            </li>
-        </ul>
+    <!-- PROJECTS -->
+    <section id="projects" class="py-20 px-6 bg-gray-900 fade-in">
+        <div class="max-w-7xl mx-auto">
+
+            <h2 class="text-3xl font-bold text-white mb-12">Selected Projects</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="glass rounded-xl overflow-hidden hover:scale-105 transition duration-300">
+                    <img src="https://source.unsplash.com/600x400/?airfoil,simulation" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-white mb-2">Sinusoidal + Vortex Generator</h3>
+                        <p class="text-gray-400 text-sm">Passive flow control study for lift enhancement and stall
+                            delay.</p>
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl overflow-hidden hover:scale-105 transition duration-300">
+                    <img src="https://source.unsplash.com/600x400/?cfd,simulation" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-white mb-2">Comparative NACA Study</h3>
+                        <p class="text-gray-400 text-sm">2412 vs 25112 vs 6-series performance evaluation.</p>
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl overflow-hidden hover:scale-105 transition duration-300">
+                    <img src="https://source.unsplash.com/600x400/?wind,tunnel" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-white mb-2">Y+ Optimization Study</h3>
+                        <p class="text-gray-400 text-sm">Mesh independence and turbulence validation analysis.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </section>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <ul>
+    <!-- SKILLS -->
+    <section id="skills" class="py-20 px-6 fade-in">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-12">Technical Skills</h2>
 
-            <li><strong>SAER (Society of Automotive Engineers RUET):</strong> Executive Member (2023–2024)</li>
-            <li><strong>SCADER (Student Chapter for Aerospace and Design Engineering Research):</strong> General Member
-            </li>
-            <li><strong>Industrial Tour:</strong> Rajshahi Sugar Mill – Hands-on exposure to industrial operations and
-                machinery.</li>
-        </ul>
+            <div class="grid md:grid-cols-3 gap-8 text-sm text-gray-400">
+                <div class="glass p-6 rounded-xl">
+                    <h4 class="text-white font-semibold mb-2">CFD & Simulation</h4>
+                    ANSYS Fluent • Turbulence Modeling • Y+ Control
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h4 class="text-white font-semibold mb-2">CAD & Design</h4>
+                    SolidWorks • Parametric Modeling • Optimization
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h4 class="text-white font-semibold mb-2">Programming</h4>
+                    Python • MATLAB • Data Processing
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="honors">
-        <h2>Honors & Awards</h2>
-        <ul>
-            <li>Technical Education Directorate Scholarship (Based on BSc Engineering Admission Exam 2023)</li>
-            <li>RUET Merit-Based Scholarship for Academic Excellence</li>
-            <li>Campus Ambassador – Youth Leadership Summit 2025</li>
-        </ul>
-    </section>
-    <section id="certifications">
-        <h2>Courses & Certifications</h2>
-        <ul>
-            <li>
-                <strong>Harnessing Wind Energy: Analytical, Numerical, and Experimental Approaches to Wind
-                    Energy</strong> - Completed specialized three day course organized by the Institute of Energy &
-                Environmental Studies (IEES), RUET.
-                <p style="text-align: justify;">This specialized three-day course was a highly enriching experience,
-                    allowing me to deepen my understanding of wind
-                    energy systems through a balanced integration of theory, simulation, and experimentation.
-                    🔹 I explored analytical approaches, including fundamental aerodynamic models and governing
-                    equations, which helped
-                    solidify my theoretical foundation in wind energy conversion.
-                    🔹 In the numerical simulation segment,I was introduced to ANSYS Fluent to perform CFD
-                    (Computational Fluid Dynamics)
-                    analysis. Simulating airflow over turbine blades and studying wake effects provided practical
-                    insight into real-world
-                    wind turbine performance.
-                    🔹 Using modeFRONTIER, I was introduced to multi-objective design optimization, where I learned how
-                    various turbine
-                    parameters can be tuned to enhance overall efficiency.
-                    🔹 I also became familiar with the MOD (Mode of Operation and Design) framework, which offered a
-                    structured way to
-                    evaluate turbine behavior under different operating conditions.
-                    Overall, this course was top-notch, providing a valuable blend of theoretical knowledge and hands-on
-                    experience in wind
-                    energy technologies.</p>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="py-20 px-6 bg-gray-900 fade-in">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-white mb-12">Experience Timeline</h2>
 
-                <img src="IEES_page-0001.jpg"
-                    alt="Harnessing Wind Energy: Analytical, Numerical, and Experimental Approaches to Wind Energy Certificate"
-                    class="cert-img" />
-            </li>
-            <li>
-                <strong>Work Smarter with Microsoft Excel</strong> – Completed online course on Ms. Excel.
-                <p style="text-align: justify;">In this Course , I was provided with in-depth training across several
-                    Excel modules, which helped me enhance my skills in both basic and
-                    advanced tasks.
-
-                    In Module 1, the basics of Excel were introduced to me, including workbook creation, data
-                    formatting, layout
-                    adjustments, and preparing workbooks for printing.
-
-                    In Module 2, I was guided through functions and formulas, sorting and filtering data, defining
-                    ranges, and using
-                    specialized, text, and logical functions.
-
-                    Module 3 helped me learn how to organize and visualize data using tables, charts, pivot tables, and
-                    slicers.
-
-                    In Module 4, advanced features such as customizing formulas, conditional formatting, workbook
-                    automation, and data
-                    exporting were explored.
-
-                    Finally, in Module 5, I completed a hands-on project where the skills I had acquired were applied to
-                    analyze and present
-                    sales data, including reviewing and commenting on the dataset.</p>
-                <img src="Coursera Microsoft Excel .jpg"
-                    alt="Microsoft Excel Certificate" class="cert-img" />
-            </li>
-            <li>
-                <strong>Python Basics</strong> – Completed online course on fundamentals of Python programming.<p
-                    style="text-align: justify;">This course covered key Python 3 concepts such as conditional
-                    execution, iteration, strings, and lists, with four
-                    in-depth modules, practice problems, and graded assessments. 💻
-                    It was a fantastic hands-on experience, and I especially enjoyed working with
-                    Turtle graphics to visualize concepts. 🐢
-                    Excited to continue building on these skills and apply them in future projects.
-                    Highly recommend this course for anyone looking to start their Python programming journey! 🐍</p>
-                <img src="Coursera R20MY5NP1KK3_page-0001.jpg"
-                    alt="Python Certificate" class="cert-img" />
-            </li>
-            <li>
-                <strong>Master Class on Leadership Excellence </strong> – Completed online course on leadership.<br />
-                <img src="master-class-on-leadership-excellence_page-0001.jpg"
-                    alt="Leadership Certificate" class="cert-img" />
-            </li>
-        </ul>
+            <div class="space-y-8 border-l border-blue-500 pl-6 text-sm text-gray-400">
+                <div>
+                    <p class="text-blue-400">2024 – Present</p>
+                    <h4 class="text-white font-semibold">Undergraduate CFD Research</h4>
+                    Independent aerodynamic simulation studies and validation.
+                </div>
+                <div>
+                    <p class="text-blue-400">2025</p>
+                    <h4 class="text-white font-semibold">Campus Ambassador</h4>
+                    Youth Leadership Summit 2025
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 px-6 fade-in">
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:sshawonkumarsarker@gmail.com">sshawonkumarsarker@gamil.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/s-sarker/">Shawon Kumar Sarker</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/shawon.sarker.12979">Shawon Kumar Sarker</a></p>
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-6">Get in Touch</h2>
+                <p class="text-gray-400 mb-6">
+                    Open to internships, research collaborations, and academic discussions.
+                </p>
+                <p class="text-sm text-gray-400">Email: your@email.com</p>
+            </div>
+
+            <form class="space-y-6">
+                <input type="text" placeholder="Your Name"
+                    class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg">
+                <input type="email" placeholder="Your Email"
+                    class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg">
+                <textarea rows="5" placeholder="Message"
+                    class="w-full p-3 bg-gray-800 border border-gray-700 rounded-lg"></textarea>
+                <button class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                    Send Message
+                </button>
+            </form>
+
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Shawon Kumar Sarker. All rights reserved.</p>
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-800 py-6 text-center text-gray-500 text-sm">
+        © 2026 Shawon Kumar Sarker • Hosted on GitHub Pages
     </footer>
+
+    <script>
+        // Typing animation
+        const texts = [
+            "Aerodynamics Researcher",
+            "CFD Simulation Practitioner",
+            "Passive Flow Control Explorer",
+            "Mechanical Engineering Student at RUET"
+        ];
+
+        let count = 0;
+        let index = 0;
+        let currentText = '';
+        let letter = '';
+
+        (function type() {
+            if (count === texts.length) { count = 0; }
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+            document.getElementById('typing').textContent = letter;
+            if (letter.length === currentText.length) {
+                setTimeout(() => { index = 0; count++; }, 1500);
+            }
+            setTimeout(type, 80);
+        })();
+
+        // Scroll fade-in
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.2 };
+
+        const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+
 </body>
 
-
 </html>
-
-
